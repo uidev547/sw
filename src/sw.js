@@ -14,6 +14,7 @@ self.addEventListener('install', (event) => {
             .open(staticCacheName)
             .then((cache) => {
                 console.log('...offlineStuff');
+                cache.add('//cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js');
                 return cache.addAll(offlineStuff);
             })
             .then(() => {
@@ -32,10 +33,12 @@ self.addEventListener('activate', function (event) {
                 return Promise.all(
                     keys
                         .filter((key) => {
+                            console.log('filter...key...', key);
                             //If your cache name don't start with the current version...
                             return !key.startsWith(version);
                         })
                         .map((key) => {
+                            console.log('map....key...', key);
                             //...YOU WILL BE DELETED
                             return caches.delete(key);
                         })
