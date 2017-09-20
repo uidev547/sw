@@ -2,10 +2,10 @@ const version = "v1::" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 const offlineStuff = [
-    './',
-    './scripts/index.js',
-    './css/index.css',
-    './index.js'
+    '/sw',
+    '/sw/src/scripts/index.js',
+    '/sw/src/css/index.css',
+    '/sw/src/index.js'
 ];
 
 self.addEventListener('install', (event) => {
