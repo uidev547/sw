@@ -15,7 +15,7 @@ self.addEventListener('install', (event) => {
             .then((cache) => {
                 console.log('...offlineStuff');
                 cache.add('//cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js');
-                return cache.addAll([]]);
+                return cache.addAll([]);
             })
             .then(() => {
                 console.log('WORKER:: install completed');
