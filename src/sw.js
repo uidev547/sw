@@ -2,6 +2,7 @@ const version = "v1::" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 const offlineStuff = [
+    './',
     './scripts/index.js',
     './css/index.css',
     './index.js'
@@ -47,7 +48,7 @@ self.addEventListener('activate', function (event) {
             .then(() => {
                 console.log('WORKER:: activation completed. This is not even my final form');
             })
-    )
+    );
 });
 
 
